@@ -212,8 +212,8 @@ def second_page():
     # 탭 세션 관리
     tabs = list(tabs_data.keys())
 
-    if "current_tab" not in st.session_state:
-        st.session_state.current_tab = tabs[0]
+    # if "current_tab" not in st.session_state:
+    #     st.session_state.current_tab = tabs[0]
 
     # if "completed_tabs" not in st.session_state:
         # st.session_state.completed_tabs = set()
@@ -223,6 +223,9 @@ def second_page():
     # for tab_idx in range(1, tab_count + 1):
 
     tabs = tabs[5:10]
+
+    if "current_tab" not in st.session_state:
+        st.session_state.current_tab = tabs[0]
     
     for tab_idx in tabs:
         tab_key = f"answers_tab{tab_idx}"
