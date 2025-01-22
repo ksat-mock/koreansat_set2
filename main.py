@@ -170,20 +170,20 @@ def first_page():
             st.error("전화번호 뒷자리 4자리를 정확하게 입력하세요.")
 
 
-def reset_radio_values_for_all_tabs():
-    # 모든 탭의 세션 상태 초기화
-    for tab_key in tabs_data.keys():
-        # 지문 관련 문제 초기화
-        passage_key = f"subquestions_passage_tab{tab_key}"
-        if passage_key in st.session_state:
-            for problems_q_key in st.session_state[passage_key]:
-                st.session_state[passage_key][problems_q_key] = [None] * len(st.session_state[passage_key][problems_q_key])
+# def reset_radio_values_for_all_tabs():
+#     # 모든 탭의 세션 상태 초기화
+#     for tab_key in tabs_data.keys():
+#         # 지문 관련 문제 초기화
+#         passage_key = f"subquestions_passage_tab{tab_key}"
+#         if passage_key in st.session_state:
+#             for problems_q_key in st.session_state[passage_key]:
+#                 st.session_state[passage_key][problems_q_key] = [None] * len(st.session_state[passage_key][problems_q_key])
 
-        # 문제 관련 문제 초기화
-        problems_key = f"subquestions_problems_tab{tab_key}"
-        if problems_key in st.session_state:
-            for problems_q_key in st.session_state[problems_key]:
-                st.session_state[problems_key][problems_q_key] = [None] * len(st.session_state[problems_key][problems_q_key])
+#         # 문제 관련 문제 초기화
+#         problems_key = f"subquestions_problems_tab{tab_key}"
+#         if problems_key in st.session_state:
+#             for problems_q_key in st.session_state[problems_key]:
+#                 st.session_state[problems_key][problems_q_key] = [None] * len(st.session_state[problems_key][problems_q_key])
 
 
 # 두 번째 페이지: 문제 풀이 페이지
@@ -637,7 +637,10 @@ def second_page():
                     # st.success("평가 데이터가 성공적으로 제출되었습니다!")
 
                     # 모든 탭 상태 초기화
-                    reset_radio_values_for_all_tabs()
+                    # reset_radio_values_for_all_tabs()
+
+                    # 0.4초 대기
+                    time.sleep(0.4)
 
                     st.rerun()
 
