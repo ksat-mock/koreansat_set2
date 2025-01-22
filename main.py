@@ -147,7 +147,7 @@ def save_data_to_firestore():
 
 # 첫 번째 페이지: 전화번호 뒷자리 4자리를 입력 받는 페이지
 def first_page():
-    st.markdown("# [ 전교 일등의 비밀 ]")
+    st.markdown("## [ 전교 일등의 비밀 ]")
     st.markdown("#### LLM-as-a-Judge를 이용한 수능 문제 출제 및 평가")
     st.title("  ")
     
@@ -694,11 +694,11 @@ def second_page():
             st.write("   ")
             st.write("   ")
             st.write("   ")
-            st.subheader(f"[{st.session_state.current_tab}] 지문 및 문제에 대한 전반적인 피드백을 남겨주세요.")  # 현재 탭에 맞는 제목
+            st.subheader(f"[{st.session_state.current_tab}] 지문 및 문제에 대해 전반적인 피드백이 있으신가요?")  # 현재 탭에 맞는 제목
         
             # 각 탭별로 고유한 key를 설정하여 피드백 입력 창 만들기
             feedback_input_key = f"feedback_input_{st.session_state.current_tab}"
-            st.text_area("의견을 남겨주세요:", key=feedback_input_key)
+            st.text_area("자유롭게 의견을 남겨주세요 :", key=feedback_input_key)
         
             # 피드백 제출 버튼 (콜백 함수 연결)
             st.button("피드백 제출하기", on_click=submit_feedback)
