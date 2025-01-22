@@ -5,6 +5,7 @@ import os
 import json
 from streamlit_gsheets import GSheetsConnection
 import math
+import time
 import pandas as pd
 import firebase_admin
 from firebase_admin import firestore, credentials, db
@@ -639,8 +640,8 @@ def second_page():
                     # 모든 탭 상태 초기화
                     # reset_radio_values_for_all_tabs()
 
-                    # 0.4초 대기
-                    time.sleep(0.4)
+                    # 1초 대기
+                    time.sleep(1)
 
                     st.rerun()
 
