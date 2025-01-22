@@ -221,7 +221,7 @@ def second_page():
     # tab_count = 5  # 예시로 7개의 탭이 있다고 가정
     # for tab_idx in range(1, tab_count + 1):
 
-    tabs = tabs[:5]
+    tabs = tabs[5:10]
     
     for tab_idx in tabs:
         tab_key = f"answers_tab{tab_idx}"
