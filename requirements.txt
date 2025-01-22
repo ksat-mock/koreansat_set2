@@ -1,0 +1,7 @@
+streamlit
+gspread
+google-auth
+pandas
+firebase-admin
+st-gsheets-connection
+git+https://github.com/streamlit/gsheets-connection
